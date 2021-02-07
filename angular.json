@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -120,5 +121,8 @@
       }
     }
   },
-  "defaultProject": "blog-java"
+  "defaultProject": "blog-java",
+  "cli": {
+    "analytics": "a63cdf14-e9e6-451d-800e-145b5f32c385"
+  }
 }
