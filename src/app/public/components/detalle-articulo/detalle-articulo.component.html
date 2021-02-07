@@ -1,0 +1,37 @@
+<app-header></app-header>
+<app-carrusell></app-carrusell>
+
+<div class="container-section">
+    <router-outlet></router-outlet>
+    <div class="row">
+        <div class="col-12 text-center text-white">
+            <div class="container-home py-2">
+                <div class="container">
+                    <h3 class="mt-3">DETALLE ARTICULO</h3>
+                    <!-- <hr class="bg-light"> -->
+                </div>
+                <div class="container container-home-in">
+                   <div class="row">
+                       <div class="col-4">
+                           <img src="../../../../assets/images/default.jpeg" class="img-article mt-4">
+                       </div>
+                       <div class="col-8">
+                            <h3 class="mt-3">Titulo: {{ articulo.title}}</h3>
+                           <h5>Autor : {{ articulo.author }}</h5>
+                           <p>{{ articulo.createAt | date: 'dd/MM/yyyy' }}</p>
+                       </div>
+                   </div>
+                   <hr class="bg-light">
+                   <p>{{ articulo.content }}</p>
+                   <div class="container">
+                       <hr class="bg-light">
+                   </div>
+                   <button class="btn btn-outline-primary border-btn-blog" (click)="volver()">
+                    <i class="fas fa-undo"></i> VOLVER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

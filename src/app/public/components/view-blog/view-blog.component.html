@@ -1,0 +1,41 @@
+<div class="container mt-2 text-center">
+    <div class="container-home-in ">
+        <div class="container text-white" >
+            <table class="table text-white">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Tiutulo</th>
+                        <th>Fecha</th>
+                        <th>Autor</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let articulo of  articulos">
+                        <th><img src="../../../../assets/images/default.jpeg" class="img-article"></th>
+                        <th><h4 class="text-primary">{{ articulo.title }}</h4></th>
+                        <th>{{ articulo.createAt | date: 'dd/MM/yyyy' }}</th>
+                        <th>{{ articulo.author }}</th>
+                        <th>
+                            <button class="btn btn-outline-primary border-btn-blog" (click)="verDetalle(articulo.id)">
+                                <i class="fas fa-eye"></i></button>
+                        </th>
+                    </tr>
+                    <tr class="text-center">
+                        <td><i class="fas fa-angle-double-left" (click)="rewind()"></i></td>
+                        <td colspan="3">
+                          <span *ngFor="let pagina of totalPages; let i = index">
+                            <a style="cursor: pointer; padding-left: 7px; color: white;" (click)="setPage(i)" [ngClass]="{ 'text-primary' : i === page }">{{ i+1 }}</a>
+                          </span>
+                        </td>
+                        <td><i class="fas fa-angle-double-right" (click)="forward()"></i></td>
+                      </tr>
+                </tbody>
+
+            </table>
+          
+        </div>
+    </div>
+</div>
+

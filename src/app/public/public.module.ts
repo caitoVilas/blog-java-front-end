@@ -10,6 +10,9 @@ import { BlogComponent } from './components/blog/blog.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddArticleComponent } from './components/add-article/add-article.component';
+import { ListArticlesComponent } from './components/list-articles/list-articles.component';
+import { ViewBlogComponent } from './components/view-blog/view-blog.component';
+import { DetalleArticuloComponent } from './components/detalle-articulo/detalle-articulo.component';
 
 
 
@@ -23,7 +26,10 @@ import { AddArticleComponent } from './components/add-article/add-article.compon
     BlogComponent,
     RegistroComponent,
     LoginComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    ListArticlesComponent,
+    ViewBlogComponent,
+    DetalleArticuloComponent
     ],
   imports: [
     CommonModule,

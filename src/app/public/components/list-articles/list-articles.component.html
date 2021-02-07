@@ -1,0 +1,19 @@
+<div class="container mt-2 text-center">
+    <div class="container-home-in ">
+        <div class="container text-white" *ngFor="let articulo of listArticulos">
+            <div class="row">
+                <div class="col-4 mt-2">
+                    <img src="../../../../assets/images/default.jpeg" alt="" class="img-article">
+                </div>
+                <div class="col-8 mt-2">
+                    <h4>{{ articulo.title }}</h4>
+                    <p>{{ articulo.createAt  | date: 'dd/MM/yyyy' }}</p>
+                    <h4>{{ articulo.author }}</h4>
+                    <a class="ml-auto" class="verMas" (click)="verArticulo(articulo.id)">Ver Mas</a>
+                    <hr class="bg-light">
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>

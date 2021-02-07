@@ -69,6 +69,19 @@ background: linear-gradient(145deg, #5a5555, #4c4747);
 box-shadow:  12px 12px 19px #322f2f,
              -12px -12px 19px #766f6f;
 }
+.container-home-in{
+border-radius: 50px;
+background: #4c4747;
+box-shadow: inset 15px 15px 14px #433e3e,
+            inset -15px -15px 14px #555050;
+}
+
+.border-btn-blog{
+border-radius: 78px;
+background: linear-gradient(145deg, #514c4c, #444040);
+box-shadow:  7px 7px 14px #373434,
+             -7px -7px 14px #615a5a;
+}
 
 .border-btn-main{
 border-radius: 49px;
@@ -80,6 +93,15 @@ box-shadow:  12px 12px 19px #322f2f,
 .ico-java{
     font-size: 50px;
     color: red;
+}
+
+.img-article{
+    width: 75px;
+    border-radius: 50%;
+}
+
+.verMas{
+    cursor: pointer;
 }
 
 @keyframes latir{
