@@ -13,6 +13,11 @@ import { AddArticleComponent } from './components/add-article/add-article.compon
 import { ListArticlesComponent } from './components/list-articles/list-articles.component';
 import { ViewBlogComponent } from './components/view-blog/view-blog.component';
 import { DetalleArticuloComponent } from './components/detalle-articulo/detalle-articulo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppComponent } from '../app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MensajesComponent } from './components/mensajes/mensajes.component';
+
 
 
 
@@ -29,11 +34,15 @@ import { DetalleArticuloComponent } from './components/detalle-articulo/detalle-
     AddArticleComponent,
     ListArticlesComponent,
     ViewBlogComponent,
-    DetalleArticuloComponent
+    DetalleArticuloComponent,
+    MensajesComponent
     ],
   imports: [
     CommonModule,
-    PublicRoutingModule
-  ]
+    PublicRoutingModule,
+    ReactiveFormsModule,
+    NgbModule
+  ],
+  bootstrap: [AppComponent]
 })
 export class PublicModule { }

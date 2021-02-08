@@ -7,37 +7,44 @@
         <div class="col-12 text-center text-white">
             <div class="container-home py-2">
                 <h3 class="mt-3">NUEVO ARTICULO</h3>
-                <hr class="bg-light">
-                <div class="row">
-                    <div class="col-6">
-                        <h5>Autor : </h5>
-                    </div>
-                    <div class="col-6">
-                        <h5>Fecha : {{ fecha |date: 'dd/MM/yyyy'}} </h5>
-                    </div>
-                </div>
                 <div class="container">
-                    <form action="">
-                        <input type="text" class="form-control mb-2" placeholder="Ingresa El Titulo">
-                        <div><p></p></div>
-                        <textarea  class="form-control mb-2"  rows="10" placeholder="Ingresa el Contenido del Articulo"></textarea>
-                        <div><p></p></div>
-                        <hr class="bg-light">
-                        <div class="row">
-                            <div class="col-6 text-center">
-                                <button class="btn btn-outline-danger  border-btn-main mb-3" [routerLink]="['']">
-                                    <i class="fas fa-ban"></i> CANCELAR</button>
+                    <div class="container-home-in">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5>Autor : </h5>
+                                </div>
+                                <div class="col-6">
+                                    <h5>Fecha : {{ fecha |date: 'dd/MM/yyyy'}} </h5>
+                                </div>
                             </div>
-                            <div class="col-6 text-center">
-                            <button class="btn btn-outline-success border-btn-main mb-3">
-                                <i class="fas fa-check-circle"></i> GUARDAR</button>
-                           </div>
-                        </div> 
-                    </form>
-                </div>
+                            <div class="container">
+                                <form action="">
+                                    <input type="text" class="form-control mb-2" placeholder="Ingresa El Titulo">
+                                    <div><p></p></div>
+                                    <textarea  class="form-control mb-2"  rows="10" placeholder="Ingresa el Contenido del Articulo"></textarea>
+                                    <div><p></p></div>
+                                    <hr class="bg-light">
+                                    <div class="row">
+                                        <div class="col-6 text-center">
+                                            <button class="btn btn-outline-danger  border-btn-main mb-3" [routerLink]="['']">
+                                                <i class="fas fa-ban"></i> CANCELAR</button>
+                                        </div>
+                                        <div class="col-6 text-center">
+                                        <button class="btn btn-outline-success border-btn-main mb-3">
+                                            <i class="fas fa-check-circle"></i> GUARDAR</button>
+                                       </div>
+                                    </div> 
+                                </form>
+                            
+                        </div>
+                    </div>
             </div>
+        </div>
+        </div>
         </div>
     </div>
 </div>
 
 <app-footer></app-footer>
+

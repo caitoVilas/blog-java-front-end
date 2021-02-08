@@ -6,6 +6,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { DetalleArticuloComponent } from './components/detalle-articulo/detalle-articulo.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { MensajesComponent } from './components/mensajes/mensajes.component';
 import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
     {path: 'registro', component: RegistroComponent},
     {path: 'login', component: LoginComponent},
     {path: 'add-article', component: AddArticleComponent},
-    {path: 'detalle/:id', component: DetalleArticuloComponent}
+    {path: 'detalle/:id', component: DetalleArticuloComponent},
+    {path: 'mensajes', component: MensajesComponent}
 ]
 
 @NgModule({

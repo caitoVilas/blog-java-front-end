@@ -7,27 +7,52 @@
         <div class="col-12 text-center text-white">
             <div class="container-home py-2">
                 <h3 class="mt-3">REGISTRO DE USUARIOS</h3>
-                <hr class="bg-light">
                 <div class="container">
-                    <form action="">
-                        <input type="text" class="form-control mb-2" placeholder="Ingresa tu nombre de Usuario">
-                        <div><p></p></div>
-                        <input type="email" class="form-control mb-2" placeholder="Ingresa tu e-mail">
-                        <div><p></p></div>
-                        <input type="password" class="form-control mb-2" placeholder="Ingresa tu Contraseña">
-                        <div><p></p></div>
-                        <hr class="bg-light">
-                        <div class="row">
-                            <div class="col-6 text-center">
-                                <button class="btn btn-outline-danger  border-btn-main mb-3" [routerLink]="['']">
-                                    <i class="fas fa-ban"></i> CANCELAR</button>
+                    <div class="container-home-in mb-3">
+                        <br>
+                        <div class="container">
+                        <form class="mt-4" [formGroup]="frmNewUser">
+                            <input type="text" class="form-control mb-2 mt-4" placeholder="Ingresa tu nombre" formControlName="nombre">
+                            <div *ngIf="frmNewUser.get('nombre').errors && frmNewUser.get('nombre').touched">
+                                <p *ngIf="frmNewUser.get('nombre').hasError('required')" class="error mt-1">
+                                    <i class="fas fa-exclamation-triangle"></i>El Nombre es Requerido
+                                </p>
                             </div>
-                            <div class="col-6 text-center">
-                            <button class="btn btn-outline-success border-btn-main mb-3">
-                                <i class="fas fa-check-circle"></i> GUARDAR</button>
-                           </div>
-                        </div> 
-                    </form>
+                            <input type="text" class="form-control mb-2 " placeholder="Ingresa tu nombre de Usuario" formControlName="nombreUsuario">
+                            <div *ngIf="frmNewUser.get('nombreUsuario').errors && frmNewUser.get('nombreUsuario').touched">
+                                <p *ngIf="frmNewUser.get('nombreUsuario').hasError('required')" class="error mt-1">
+                                    <i class="fas fa-exclamation-triangle"></i>El Nombre de Usuario es Requerido
+                                </p>
+                            </div>
+                            <input type="email" class="form-control mb-2" placeholder="Ingresa tu e-mail" formControlName="email">
+                            <div *ngIf="frmNewUser.get('email').errors && frmNewUser.get('email').touched">
+                                <p *ngIf="frmNewUser.get('email').hasError('email')" class="error mt-1">
+                                    <i class="fas fa-exclamation-triangle"></i>El formato de e-mail No es Valido
+                                </p>
+                                <p *ngIf="frmNewUser.get('email').hasError('required')" class="error mt-1">
+                                    <i class="fas fa-exclamation-triangle"></i>El e-mail es Requerido
+                                </p>
+                            </div>
+                            <input type="password" class="form-control mb-2" placeholder="Ingresa tu Contraseña" formControlName="password">
+                            <div *ngIf="frmNewUser.get('password').errors && frmNewUser.get('password').touched">
+                                <p *ngIf="frmNewUser.get('password').hasError('required')" class="error mt-1">
+                                    <i class="fas fa-exclamation-triangle"></i>La Contraseña es Requerida
+                                </p>
+                            </div>
+                            <hr class="bg-light">
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <button class="btn btn-outline-danger  border-btn-main mb-3" [routerLink]="['']">
+                                        <i class="fas fa-ban"></i> CANCELAR</button>
+                                </div>
+                                <div class="col-6 text-center">
+                                <button class="btn btn-outline-success border-btn-main mb-3" [disabled]="!frmNewUser.valid" (click)="onCreate()">
+                                    <i class="fas fa-check-circle"></i> GUARDAR</button>
+                               </div>
+                            </div> 
+                        </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,3 +60,4 @@
 </div>
 
 <app-footer></app-footer>
+

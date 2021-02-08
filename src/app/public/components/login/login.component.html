@@ -7,25 +7,38 @@
         <div class="col-12 text-center text-white">
             <div class="container-home py-2">
                 <h3 class="mt-3">LOGIN DE USUARIOS</h3>
-                <hr class="bg-light">
                 <div class="container">
-                    <form action="">
-                        <input type="text" class="form-control mb-2" placeholder="Ingresa tu nombre de Usuario">
-                        <div><p></p></div>
-                        <input type="password" class="form-control mb-2" placeholder="Ingresa tu Contraseña">
-                        <div><p></p></div>
-                        <hr class="bg-light">
-                        <div class="row">
-                            <div class="col-6 text-center">
-                                <button class="btn btn-outline-danger  border-btn-main mb-3" [routerLink]="['']">
-                                    <i class="fas fa-ban"></i> CANCELAR</button>
-                            </div>
-                            <div class="col-6 text-center">
-                            <button class="btn btn-outline-success border-btn-main mb-3">
-                                <i class="fas fa-check-circle"></i> GUARDAR</button>
-                           </div>
-                        </div> 
-                    </form>
+                    <div class="container-home-in mb-3">
+                        <br>
+                        <div class="container">
+                            <form [formGroup]="frmLogin">
+                                <input type="text" class="form-control mb-2 mt-4" placeholder="Ingresa tu nombre de Usuario" formControlName="nombreUsuario">
+                                <div *ngIf="frmLogin.get('nombreUsuario').errors && frmLogin.get('nombreUsuario').touched">
+                                    <p *ngIf="frmLogin.get('nombreUsuario').hasError('required')" class="error mt-1">
+                                        <i class="fas fa-exclamation-triangle"></i> El Nombre de Usuario es Requerido
+                                    </p>
+                                </div>
+                                <input type="password" class="form-control mb-2" placeholder="Ingresa tu Contraseña" 
+                                formControlName="password">
+                                <div *ngIf="frmLogin.get('password').errors && frmLogin.get('password').touched">
+                                    <p *ngIf="frmLogin.get('password').hasError('required')" class="error mt-1">
+                                        <i class="fas fa-exclamation-triangle"></i> La Contraseña  es Requerida
+                                    </p>
+                                </div>
+                                <hr class="bg-light">
+                                <div class="row">
+                                    <div class="col-6 text-center">
+                                        <button class="btn btn-outline-danger  border-btn-main mb-3" [routerLink]="['']">
+                                            <i class="fas fa-ban"></i> CANCELAR</button>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                    <button class="btn btn-outline-success border-btn-main mb-3" (click)="onLogin()">
+                                        <i class="fas fa-check-circle"></i> INGRESAR</button>
+                                   </div>
+                                </div> 
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,3 +46,5 @@
 </div>
 
 <app-footer></app-footer>
+
+

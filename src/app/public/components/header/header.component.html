@@ -13,16 +13,32 @@
           <a class="nav-link"  [routerLink]="['/blog']">
             <i class="fas fa-blog"></i> Blog</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isNotLogged">
           <a class="nav-link"  [routerLink]="['/registro']">
             <i class="fas fa-address-card"></i> Registro</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isNotLogged">
             <a class="nav-link"  [routerLink]="['/login']">
               <i class="fas fa-sign-in-alt"></i> Ingreso</a>
           </li>
+          <li class="nav-item" *ngIf="isLoged">
+            <div ngbDropdown class="d-inline-block text-white">
+              <button class="btn btn-outline-secondary text-white border-btn-main" id="dropdownBasic1" ngbDropdownToggle>
+                {{ usuario }}
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem><i class="fas fa-exchange-alt"></i> Cambiar Contraseña</button>
+                <div class="dropdown-divider" *ngIf="isAdmin"></div>
+                <button ngbDropdownItem *ngIf="isAdmin"><i class="fas fa-users-cog"></i> Administrar Usuarios</button>
+                <button ngbDropdownItem *ngIf="isAdmin"  [routerLink]="['/mensajes']">
+                  <i class="fas fa-envelope-open-text"></i> Ver Mensajes</button>
+                <div class="dropdown-divider" *ngIf="isAdmin"></div>
+                <button ngbDropdownItem (click)="onLogout()" style="color: red;"><i class="fas fa-sign-out-alt"></i> Salir</button>
+              </div>
+            </div>
+          </li>
           <!-- <img src="../../../../assets/images/icoJava.png" alt="java 2" class="logo2"> -->
-          <i class="fab fa-java ico-java"></i>
+          <i class="fab fa-java ico-java ml-5 mr-5"></i>
       </ul>
     </div>
   </nav>

@@ -84,10 +84,10 @@ box-shadow:  7px 7px 14px #373434,
 }
 
 .border-btn-main{
-border-radius: 49px;
-background: linear-gradient(145deg, #4c4747, #5a5555);
-box-shadow:  12px 12px 19px #322f2f,
-             -12px -12px 19px #766f6f;
+    border-radius: 53px;
+    background: #4c4747;
+    box-shadow:  7px 7px 10px #3c3838,
+                 -7px -7px 10px #5c5656;
 }
 
 .ico-java{
@@ -103,7 +103,10 @@ box-shadow:  12px 12px 19px #322f2f,
 .verMas{
     cursor: pointer;
 }
-
+.error{
+    background-color: red;
+    color: white;
+}
 @keyframes latir{
     0%{
         transform: scale(1.0);
